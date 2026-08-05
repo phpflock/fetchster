@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Fetchster</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%230a84ff' d='M12 3a1 1 0 0 1 1 1v9.6l3.3-3.3a1 1 0 1 1 1.4 1.4l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.4l3.3 3.3V4a1 1 0 0 1 1-1z'/%3E%3Cpath fill='%230a84ff' d='M5 20a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z'/%3E%3C/svg%3E">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+           color: #1d1d1f; background: #fff; line-height: 1.6; margin: 0; }
+    main { max-width: 720px; margin: 0 auto; padding: 56px 24px 80px; }
+    h1 { font-size: 2.1rem; margin: 0 0 6px; }
+    .updated { color: #6e6e73; font-size: 13px; margin-bottom: 32px; }
+    h2 { font-size: 1.25rem; margin: 30px 0 8px; }
+    p, li { font-size: 15px; color: #3a3a3c; }
+    a { color: #0071e3; }
+    .back { display: inline-block; margin-bottom: 28px; font-size: 14px; }
+  </style>
+</head>
+<body>
+<main>
+  <a class="back" href="./">&larr; Back to Fetchster</a>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: August 5, 2026</p>
+
+  <p>Fetchster is a native macOS download manager with a companion browser
+  extension ("Fetchster Capture"). This policy explains what information the
+  app and extension access, and how it is handled.</p>
+
+  <h2>What the extension accesses</h2>
+  <p>When you download a file, start a torrent, or play a video on a page, the
+  extension reads the download URL and the request context needed to reproduce
+  the download correctly: HTTP request headers, cookies, and User-Agent for
+  that download. It may also read the URLs of media streams a page is playing,
+  so the app can offer them as downloadable formats.</p>
+
+  <h2>Where that data goes</h2>
+  <p>All of it is sent only to the Fetchster app running on <strong>your own
+  Mac</strong>, over the local loopback interface (127.0.0.1). The data is used
+  solely to perform the download you requested and is not transmitted to any
+  server operated by Fetchster. We do not collect, store, or transmit
+  analytics, telemetry, or any personal information.</p>
+
+  <h2>Downloads and local data</h2>
+  <p>The app stores your download list locally on your Mac
+  (~/Library/Application Support/Fetchster). Files download to the folder you
+  choose. When you enable optional features, the app downloads engine binaries
+  (yt-dlp, ffmpeg, aria2) from their official sources. For YouTube and similar
+  sites, yt-dlp requests format information using your existing browser
+  session. Torrent downloads connect to peers and trackers you explicitly
+  initiate.</p>
+
+  <h2>Third-party services</h2>
+  <p>Fetchster uses open-source tools (yt-dlp, FFmpeg, aria2) whose own
+  privacy policies apply to their operation. The app itself has no account
+  system and sends no data to us.</p>
+
+  <h2>Contact</h2>
+  <p>Questions? Open an issue at
+  <a href="https://github.com/phpflock/fetchster/issues">github.com/phpflock/fetchster/issues</a>.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, we will update this page.</p>
+</main>
+</body>
+</html>
