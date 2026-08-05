@@ -3,18 +3,18 @@
   "name": "Fetchster Capture",
   "version": "1.0.0",
   "description": "Send downloads, torrents, magnets, and playing videos to the Fetchster macOS menu-bar app.",
-  "data_collection_permissions": {
-    "required": [
-      "cookie",
-      "web-history",
-      "website-content"
-    ],
-    "optional": []
-  },
   "browser_specific_settings": {
     "gecko": {
       "id": "fetchster@phpflock.github.io",
-      "strict_min_version": "121.0"
+      "strict_min_version": "121.0",
+      "data_collection_permissions": {
+        "required": [
+          "cookie",
+          "web-history",
+          "website-content"
+        ],
+        "optional": []
+      }
     }
   },
   "permissions": [
