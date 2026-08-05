@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fetchster — All your downloads, caught in the menu bar</title>
+  <meta name="description" content="Fetchster is a native macOS menu-bar download manager. Files, torrents, magnets, and video — all in one clean top-bar list.">
+  <meta property="og:title" content="Fetchster">
+  <meta property="og:description" content="A native macOS menu-bar download manager. Files, torrents, and video — all caught in the top bar.">
+  <meta property="og:image" content="https://phpflock.github.io/fetchster/images/yt-grab.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%230a84ff' d='M12 3a1 1 0 0 1 1 1v9.6l3.3-3.3a1 1 0 1 1 1.4 1.4l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.4l3.3 3.3V4a1 1 0 0 1 1-1z'/%3E%3Cpath fill='%230a84ff' d='M5 20a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="#top">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a1 1 0 0 1 1 1v9.6l3.3-3.3a1 1 0 1 1 1.4 1.4l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.4l3.3 3.3V4a1 1 0 0 1 1-1z"/><path d="M5 20a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z"/></svg>
+      <span>Fetchster</span>
+    </a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#how">How it works</a>
+      <a class="nav-cta" href="https://github.com/phpflock/fetchster/releases" target="_blank" rel="noopener">Download</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="badge">Native macOS &middot; Menu bar only</span>
+      <h1>All your downloads,<br>caught in the <span class="accent">menu bar</span>.</h1>
+      <p class="lede">
+        Fetchster is a native macOS download manager that lives in the top bar.
+        Files, torrents, magnets, and video &mdash; everything lands in one clean
+        list, with the look and feel of macOS itself. No Dock icon. No clutter.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/phpflock/fetchster/releases" target="_blank" rel="noopener">
+          Download Fetchster
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/phpflock/fetchster" target="_blank" rel="noopener">
+          View on GitHub
+        </a>
+      </div>
+
+      <!-- Menu-bar mock -->
+      <div class="menubar-mock" aria-hidden="true">
+        <div class="menubar">
+          <svg class="mb-icon apple" viewBox="0 0 24 24"><path d="M16.4 12.4c-.02-2.5 2.05-3.7 2.14-3.76-1.16-1.7-2.98-1.94-3.62-1.96-1.54-.16-3 .9-3.78.9-.79 0-2-.88-3.3-.86-1.7.03-3.26.99-4.14 2.51-1.76 3.06-.45 7.6 1.27 10.08.84 1.21 1.84 2.57 3.15 2.52 1.26-.05 1.74-.82 3.27-.82 1.52 0 1.95.82 3.29.79 1.36-.03 2.22-1.23 3.06-2.45.97-1.41 1.36-2.78 1.38-2.85-.03-.01-2.63-1.01-2.65-4zM14 5.85c.7-.84 1.16-2.01 1.03-3.18-1 .04-2.21.67-2.93 1.51-.64.75-1.2 1.95-1.05 3.1 1.11.09 2.25-.57 2.95-1.43z"/></svg>
+          <span class="menu-app">
+            <svg class="mb-icon" viewBox="0 0 24 24"><path d="M12 3a1 1 0 0 1 1 1v9.6l3.3-3.3a1 1 0 1 1 1.4 1.4l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.4l3.3 3.3V4a1 1 0 0 1 1-1z"/><path d="M5 20a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z"/></svg>
+            Fetchster
+          </span>
+          <span class="menu-spacer"></span>
+          <svg class="mb-icon" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <svg class="mb-icon" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="5.4" rx="2.7" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="8" cy="8.2" r="1.5" fill="currentColor"/><rect x="3.5" y="13.1" width="17" height="5.4" rx="2.7" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="15.5" cy="15.8" r="1.5" fill="currentColor"/></svg>
+          <svg class="mb-icon battery-icon" viewBox="0 0 24 24"><rect x="1.5" y="6.5" width="17" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20.5 9.5v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="3.5" y="8.5" width="11" height="7" rx="1.6" fill="currentColor"/></svg>
+          <span class="battery-pct">87%</span>
+          <span class="clock" id="mb-clock">Wed Aug 5 &nbsp;8:05 PM</span>
+        </div>
+        <div class="popover">
+          <div class="popover-head">
+            <span>Fetchster</span>
+            <span class="pill">12 downloads</span>
+          </div>
+          <div class="pop-row">
+            <svg viewBox="0 0 24 24"><path d="M12 3v9.6l3.3-3.3 1.4 1.4-5 5-5-5 1.4-1.4L11 12.6V3h1z"/></svg>
+            <div class="pop-meta"><span>Big Buck Bunny 4K.mp4</span><i>100%</i></div>
+          </div>
+          <div class="pop-row">
+            <svg viewBox="0 0 24 24"><path d="M12 3v9.6l3.3-3.3 1.4 1.4-5 5-5-5 1.4-1.4L11 12.6V3h1z"/></svg>
+            <div class="pop-meta"><span>video.mp4</span><i>48% &middot; 6.2 MB/s</i></div>
+          </div>
+          <div class="pop-row">
+            <svg viewBox="0 0 24 24"><path d="M12 3v9.6l3.3-3.3 1.4 1.4-5 5-5-5 1.4-1.4L11 12.6V3h1z"/></svg>
+            <div class="pop-meta"><span>album.zip</span><i>Done</i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="section">
+    <div class="container">
+      <h2 class="section-title">Everything a download manager should be.</h2>
+      <p class="section-sub">One menu-bar item. Every download you care about.</p>
+      <div class="grid">
+        <article class="card reveal">
+          <svg viewBox="0 0 24 24"><path d="M3 5h18v2H3V5zm0 4h18v2H3V9zm0 4h18v2H3v-2zm0 4h12v2H3v-2z"/></svg>
+          <h3>Menu bar only</h3>
+          <p>A native top-bar dropdown with the exact look and feel of macOS. No Dock icon, no window, no distraction.</p>
+        </article>
+        <article class="card reveal">
+          <svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6V2zm2 2v16h10V8h-4V4H8zm4 8h2v4h-2v-4zm0-3h2v2h-2V9z"/></svg>
+          <h3>Every file type</h3>
+          <p>HTTP, HTTPS, FTP, torrents, magnets &mdash; anything with a link. Pause and resume with byte-range accuracy.</p>
+        </article>
+        <article class="card reveal">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v12h16V6H4zm3 3h10v2H7V9zm0 4h10v2H7v-2zm0 3h6v2H7v-2z"/></svg>
+          <h3>Browser capture</h3>
+          <p>The companion extension routes browser downloads to Fetchster with your exact headers, cookies, and User-Agent.</p>
+        </article>
+        <article class="card reveal">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 1 10 10c0 5.5-4.4 10-10 10S2 17.5 2 12 6.5 2 12 2zm0 3.5a6.5 6.5 0 0 0-6.5 6.5c0 3.6 2.9 6.5 6.5 6.5s6.5-2.9 6.5-6.5A6.5 6.5 0 0 0 12 5.5z"/></svg>
+          <h3>Torrents that seed</h3>
+          <p>Full torrent engine with DHT, peer exchange, seeding, live swarm stats, and tracker management built in.</p>
+        </article>
+        <article class="card reveal">
+          <svg viewBox="0 0 24 24"><path d="M4 9a8 8 0 0 1 16 0v1h-2V9a6 6 0 0 0-12 0v1H4V9zm0 2h2v8H4v-8zm14 0h2v8h-2v-8zm-7 2h2v5h-2v-5z"/></svg>
+          <h3>Video grab</h3>
+          <p>Playing a video? The icon pops. Pick 4K, 1080p, or audio-only from the menu bar and it downloads, merged to MP4.</p>
+        </article>
+        <article class="card reveal">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm-1 4h2v4.6l2.3-2.3 1.4 1.4-4.7 4.7-4.7-4.7 1.4-1.4L11 12.6V8z"/></svg>
+          <h3>Stays small</h3>
+          <p>Engines are fetched on demand from official sources &mdash; yt-dlp and ffmpeg update themselves, and the app stays lean.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section id="screenshots" class="section screenshots">
+    <div class="container">
+      <h2 class="section-title">See it in action.</h2>
+      <p class="section-sub">Straight from the menu bar.</p>
+
+      <figure class="shot reveal">
+        <div class="shot-frame">
+          <img src="images/yt-grab.jpg" alt="Fetchster video grab showing YouTube quality options in the menu bar" loading="lazy">
+        </div>
+        <figcaption>
+          <h3>Grab any video</h3>
+          <p>YouTube and more &mdash; a full quality list (4K to audio-only) right in the menu bar. One click, done.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="shot shot-alt reveal">
+        <div class="shot-frame">
+          <img src="images/downloads.jpg" alt="Fetchster download list showing progress, speed, and status" loading="lazy">
+        </div>
+        <figcaption>
+          <h3>Everything in one list</h3>
+          <p>Progress, speed, ETA, and status for every download &mdash; torrents included &mdash; in a native top-bar dropdown.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="section how">
+    <div class="container">
+      <h2 class="section-title">Up and running in a minute.</h2>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="step-num">1</span>
+          <h3>Install Fetchster</h3>
+          <p>The app icon appears in your menu bar. No Dock icon, no setup wizard.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num">2</span>
+          <h3>Add the extension</h3>
+          <p>One click in Brave or Chrome, and browser downloads route to Fetchster with your real session.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num">3</span>
+          <h3>Download anything</h3>
+          <p>Files, magnets, torrents, playing videos &mdash; all in one clean list. Enable torrents and media in Settings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Note -->
+  <section class="section note">
+    <div class="container">
+      <div class="note-box reveal">
+        <h3>Zero bloat by design</h3>
+        <p>
+          yt-dlp and ffmpeg download from their official sources only when you enable
+          <strong>Media downloads</strong>; the torrent engine downloads when you enable
+          <strong>Torrent downloads</strong>. The app itself stays small.
+        </p>
+        <a class="btn btn-primary" href="https://github.com/phpflock/fetchster/releases" target="_blank" rel="noopener">Get Fetchster</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span class="brand small">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v9.6l3.3-3.3 1.4 1.4-5 5-5-5 1.4-1.4L11 12.6V3h1z"/></svg>
+      Fetchster
+    </span>
+    <span class="footer-links">
+      <a href="https://github.com/phpflock/fetchster" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/phpflock/fetchster/releases" target="_blank" rel="noopener">Releases</a>
+      <span>&copy; 2026 Fetchster</span>
+    </span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
