@@ -25,10 +25,11 @@ Website: <https://phpflock.github.io/fetchster/>
   - **YouTube and other yt-dlp sites** — per-quality rows (2160p down
     to audio-only) via [yt-dlp](https://github.com/yt-dlp/yt-dlp), merged into
     a single MP4 with ffmpeg. Works with your logged-in browser session.
-- **Browser capture (Chrome/Edge/Brave)** — the companion extension hands
-  downloads to the app with the browser's exact request context (User-Agent,
-  cookies, Referer, all headers), so servers see a real browser request. Right-
-  click *Download with Fetchster* works for links and `magnet:` URLs too.
+- **Browser capture (Chrome/Edge/Brave/Firefox)** — the companion extension
+  hands downloads to the app with the browser's exact request context
+  (User-Agent, cookies, Referer, all headers), so servers see a real browser
+  request. Right-click *Download with Fetchster* works for links and `magnet:`
+  URLs too. The extension lives in `Extensions/chrome` and `Extensions/firefox`.
 - **Video grab** — when a page plays a video, the extension
   reports the streams and the menu bar icon "pops". Open the popover for a
   **Video detected** section listing every format — direct files (MP4, WebM,
