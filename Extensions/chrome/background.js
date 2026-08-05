@@ -191,7 +191,9 @@ chrome.downloads.onChanged.addListener(async (delta) => {
     if (!captureEnabled()) return;
     const id = delta.id;
     if (!delta.filename || handedOffDownloads.has(id)) return;
-    const item = await chrome.downloads.get(id);
+    // Firefox doesn't implement downloads.get; search is supported everywhere.
+    const found = await chrome.downloads.search({ id });
+    const item = found && found[0];
     if (!item || !item.filename) return;
     if (item.state !== "in_progress" && item.state !== "complete") return;
     const url = item.url;
