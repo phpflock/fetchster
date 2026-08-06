@@ -137,9 +137,13 @@ final class TorrentEngine: ObservableObject {
             self?.daemon = nil
         }
         // On-demand installs live next to their dylibs; point the loader at them.
+        // The aria2 build also needs OpenSSL 3's `legacy` provider, which ships
+        // as a separate module (ossl-modules/legacy.dylib) in the release zip.
         if binary.path.contains("/engines/") {
             var env = ProcessInfo.processInfo.environment
-            env["DYLD_LIBRARY_PATH"] = binary.deletingLastPathComponent().path
+            let dir = binary.deletingLastPathComponent().path
+            env["DYLD_LIBRARY_PATH"] = dir
+            env["OPENSSL_MODULES"] = "\(dir)/ossl-modules"
             process.environment = env
         }
         do {

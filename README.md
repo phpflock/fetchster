@@ -65,9 +65,12 @@ Website: <https://phpflock.github.io/fetchster/>
     (yt-dlp's GitHub release, ffmpeg.org's recommended macOS builds), so
     updates arrive with upstream releases.
   - aria2 publishes no official macOS binary; upload `dist/aria2.zip`
-    (aria2c + its dylibs) as a GitHub release and set the `engine.aria2.url`
-    UserDefaults key to its download URL (see `dist/README-upload.md`).
-    Per-engine overrides: `engine.ytdlp.url`, `engine.ffmpeg.url`.
+    (aria2c + its dylibs + `ossl-modules/legacy.dylib`) as a GitHub release
+    and set the `engine.aria2.url` UserDefaults key to its download URL (see
+    `dist/README-upload.md`). The OpenSSL `legacy` provider module is
+    mandatory — without it aria2 aborts with `OSSL_PROVIDER_load 'legacy'
+    failed` and the engine fails verification. Per-engine overrides:
+    `engine.ytdlp.url`, `engine.ffmpeg.url`.
 
 ## Requirements
 

@@ -323,7 +323,12 @@ final class EngineManager: ObservableObject {
         process.arguments = binary.verifyArguments
         if binary == .aria2 {
             var env = ProcessInfo.processInfo.environment
-            env["DYLD_LIBRARY_PATH"] = url.deletingLastPathComponent().path
+            let dir = url.deletingLastPathComponent().path
+            env["DYLD_LIBRARY_PATH"] = dir
+            // The aria2 build needs OpenSSL 3's `legacy` provider, which ships
+            // as a separate module (ossl-modules/legacy.dylib) in the release
+            // zip. Point OpenSSL at it or aria2 aborts on startup.
+            env["OPENSSL_MODULES"] = "\(dir)/ossl-modules"
             process.environment = env
         }
         let outPipe = Pipe()
@@ -336,6 +341,13 @@ final class EngineManager: ObservableObject {
             return false
         }
         process.waitUntilExit()
+        if process.terminationStatus != 0 {
+            let stderr = String(data: errPipe.fileHandleForReading.readDataToEndOfFile(),
+                                encoding: .utf8)?
+                .trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            NSLog("aria2 verification failed (exit %d): %@",
+                  process.terminationStatus, stderr)
+        }
         return process.terminationStatus == 0
     }
 
