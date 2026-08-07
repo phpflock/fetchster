@@ -645,6 +645,15 @@ struct SettingsView: View {
     var onDone: () -> Void
 
     @State private var loginError: String?
+    @State private var pendingEngine: PendingEngine?
+
+    /// Engine the user wants to enable; pending user consent before the
+    /// binary is downloaded and installed.
+    enum PendingEngine: String, Identifiable {
+        case torrent
+        case media
+        var id: String { rawValue }
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
@@ -717,6 +726,28 @@ struct SettingsView: View {
         }
         .padding(14)
         .frame(width: 340)
+        .alert(item: $pendingEngine) { engine in
+            switch engine {
+            case .torrent:
+                Alert(
+                    title: Text("Enable Torrent downloads?"),
+                    message: Text("Fetchster will download the aria2 download engine (aria2c) and run it on your Mac to handle .torrent files and magnet links."),
+                    primaryButton: .default(Text("Agree")) {
+                        store.setTorrentEngineEnabled(true)
+                    },
+                    secondaryButton: .cancel(Text("Cancel"))
+                )
+            case .media:
+                Alert(
+                    title: Text("Enable Media downloads?"),
+                    message: Text("Fetchster will download the yt-dlp and ffmpeg download engines and run them on your Mac to handle YouTube, HLS and DASH video downloads."),
+                    primaryButton: .default(Text("Agree")) {
+                        store.setMediaEngineEnabled(true)
+                    },
+                    secondaryButton: .cancel(Text("Cancel"))
+                )
+            }
+        }
     }
 
     private var concurrentBinding: Binding<Int> {
@@ -750,14 +781,26 @@ struct SettingsView: View {
     private var torrentEngineBinding: Binding<Bool> {
         Binding(
             get: { engines.torrentEnabled },
-            set: { store.setTorrentEngineEnabled($0) }
+            set: { newValue in
+                if newValue {
+                    pendingEngine = .torrent
+                } else {
+                    store.setTorrentEngineEnabled(false)
+                }
+            }
         )
     }
 
     private var youtubeEngineBinding: Binding<Bool> {
         Binding(
             get: { engines.mediaEnabled },
-            set: { store.setMediaEngineEnabled($0) }
+            set: { newValue in
+                if newValue {
+                    pendingEngine = .media
+                } else {
+                    store.setMediaEngineEnabled(false)
+                }
+            }
         )
     }
 

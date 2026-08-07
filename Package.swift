@@ -10,6 +10,10 @@ let package = Package(
         .executableTarget(
             name: "Fetchster",
             path: "Sources/Fetchster"
+        ),
+        .executableTarget(
+            name: "FetchsterNativeHost",
+            path: "Sources/FetchsterNativeHost"
         )
     ]
 )

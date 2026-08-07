@@ -17,6 +17,7 @@ echo "==> Assembling app bundle..."
 rm -rf "$APP"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 cp "$BIN" "$APP/Contents/MacOS/$APP_NAME"
+cp "$PWD/Resources/AppIcon.icns" "$APP/Contents/Resources/AppIcon.icns"
 
 # Engines (aria2, yt-dlp, ffmpeg) are not bundled: the app downloads them on
 # demand from official sources (or the configured engine.*.url overrides),
@@ -33,6 +34,7 @@ cat > "$APP/Contents/Info.plist" <<PLIST
     <key>CFBundleInfoDictionaryVersion</key><string>6.0</string>
     <key>CFBundleName</key><string>$APP_NAME</string>
     <key>CFBundleDisplayName</key><string>$APP_NAME</string>
+    <key>CFBundleIconFile</key><string>AppIcon</string>
     <key>CFBundlePackageType</key><string>APPL</string>
     <key>CFBundleShortVersionString</key><string>$VERSION</string>
     <key>CFBundleVersion</key><string>1</string>

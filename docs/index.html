@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fetchster — All your downloads, caught in the menu bar</title>
-  <meta name="description" content="Fetchster is a native macOS menu-bar download manager. Files, torrents, magnets, and video — all in one clean top-bar list.">
+  <meta name="description" content="Fetchster is a native macOS menu-bar download manager. Files, torrents, and magnets — all in one clean top-bar list.">
   <meta property="og:title" content="Fetchster">
-  <meta property="og:description" content="A native macOS menu-bar download manager. Files, torrents, and video — all caught in the top bar.">
-  <meta property="og:image" content="https://phpflock.github.io/fetchster/images/yt-grab.jpg">
+  <meta property="og:description" content="A native macOS menu-bar download manager. Files, torrents, and magnets — all caught in the top bar.">
+  <meta property="og:image" content="https://phpflock.github.io/fetchster/images/fetchster-og.png">
   <meta property="og:type" content="website">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%230a84ff' d='M12 3a1 1 0 0 1 1 1v9.6l3.3-3.3a1 1 0 1 1 1.4 1.4l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.4l3.3 3.3V4a1 1 0 0 1 1-1z'/%3E%3Cpath fill='%230a84ff' d='M5 20a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
@@ -38,7 +38,7 @@
       <h1>All your downloads,<br>caught in the <span class="accent">menu bar</span>.</h1>
       <p class="lede">
         Fetchster is a native macOS download manager that lives in the top bar.
-        Files, torrents, magnets, and video &mdash; everything lands in one clean
+        Files, torrents, magnets, and downloads &mdash; everything lands in one clean
         list, with the look and feel of macOS itself. No Dock icon. No clutter.
       </p>
       <div class="hero-actions">
@@ -72,15 +72,15 @@
           </div>
           <div class="pop-row">
             <svg viewBox="0 0 24 24"><path d="M12 3v9.6l3.3-3.3 1.4 1.4-5 5-5-5 1.4-1.4L11 12.6V3h1z"/></svg>
-            <div class="pop-meta"><span>Big Buck Bunny 4K.mp4</span><i>100%</i></div>
+            <div class="pop-meta"><span>project-backup.zip</span><i>Done</i></div>
           </div>
           <div class="pop-row">
             <svg viewBox="0 0 24 24"><path d="M12 3v9.6l3.3-3.3 1.4 1.4-5 5-5-5 1.4-1.4L11 12.6V3h1z"/></svg>
-            <div class="pop-meta"><span>video.mp4</span><i>48% &middot; 6.2 MB/s</i></div>
+            <div class="pop-meta"><span>ubuntu-24.04.iso</span><i>48% &middot; 6.2 MB/s</i></div>
           </div>
           <div class="pop-row">
             <svg viewBox="0 0 24 24"><path d="M12 3v9.6l3.3-3.3 1.4 1.4-5 5-5-5 1.4-1.4L11 12.6V3h1z"/></svg>
-            <div class="pop-meta"><span>album.zip</span><i>Done</i></div>
+            <div class="pop-meta"><span>design-assets.zip</span><i>Done</i></div>
           </div>
         </div>
       </div>
@@ -106,7 +106,7 @@
         <article class="card reveal">
           <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v12h16V6H4zm3 3h10v2H7V9zm0 4h10v2H7v-2zm0 3h6v2H7v-2z"/></svg>
           <h3>Browser capture</h3>
-          <p>The companion extension routes browser downloads to Fetchster with your exact headers, cookies, and User-Agent.</p>
+          <p>The companion extension routes browser downloads to Fetchster with one click — no dialogs, no double downloads.</p>
         </article>
         <article class="card reveal">
           <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 1 10 10c0 5.5-4.4 10-10 10S2 17.5 2 12 6.5 2 12 2zm0 3.5a6.5 6.5 0 0 0-6.5 6.5c0 3.6 2.9 6.5 6.5 6.5s6.5-2.9 6.5-6.5A6.5 6.5 0 0 0 12 5.5z"/></svg>
@@ -114,14 +114,14 @@
           <p>Full torrent engine with DHT, peer exchange, seeding, live swarm stats, and tracker management built in.</p>
         </article>
         <article class="card reveal">
-          <svg viewBox="0 0 24 24"><path d="M4 9a8 8 0 0 1 16 0v1h-2V9a6 6 0 0 0-12 0v1H4V9zm0 2h2v8H4v-8zm14 0h2v8h-2v-8zm-7 2h2v5h-2v-5z"/></svg>
-          <h3>Video grab</h3>
-          <p>Playing a video? The icon pops. Pick 4K, 1080p, or audio-only from the menu bar and it downloads, merged to MP4.</p>
+          <svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6V2zm2 2v16h10V8h-4V4H8zm4 8h2v4h-2v-4zm0-3h2v2h-2V9z"/></svg>
+          <h3>Smart resume</h3>
+          <p>Interrupted downloads pick up right where they left off with byte-range resume and full pause support.</p>
         </article>
         <article class="card reveal">
           <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm-1 4h2v4.6l2.3-2.3 1.4 1.4-4.7 4.7-4.7-4.7 1.4-1.4L11 12.6V8z"/></svg>
           <h3>Stays small</h3>
-          <p>Engines are fetched on demand from official sources &mdash; yt-dlp and ffmpeg update themselves, and the app stays lean.</p>
+          <p>Engines are fetched on demand from official sources &mdash; ffmpeg and aria2 update themselves, and the app stays lean.</p>
         </article>
       </div>
     </div>
@@ -135,21 +135,31 @@
 
       <figure class="shot reveal">
         <div class="shot-frame">
-          <img src="images/yt-grab.jpg" alt="Fetchster video grab showing YouTube quality options in the menu bar" loading="lazy">
+          <img src="images/fetchster-menu.png" alt="Fetchster menu bar with the download list" loading="lazy">
         </div>
         <figcaption>
-          <h3>Grab any video</h3>
-          <p>YouTube and more &mdash; a full quality list (4K to audio-only) right in the menu bar. One click, done.</p>
+          <h3>Everything in one list</h3>
+          <p>Files, magnets, and torrents &mdash; progress, speed, and status all in a native top-bar dropdown.</p>
         </figcaption>
       </figure>
 
       <figure class="shot shot-alt reveal">
         <div class="shot-frame">
-          <img src="images/downloads.jpg" alt="Fetchster download list showing progress, speed, and status" loading="lazy">
+          <img src="images/fetchster-capture.png" alt="Fetchster Capture handing a browser download to the Fetchster app" loading="lazy">
         </div>
         <figcaption>
-          <h3>Everything in one list</h3>
-          <p>Progress, speed, ETA, and status for every download &mdash; torrents included &mdash; in a native top-bar dropdown.</p>
+          <h3>Browser capture</h3>
+          <p>Download links route to Fetchster with one click &mdash; or right-click any link and choose <em>Download with Fetchster</em>.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="shot reveal">
+        <div class="shot-frame">
+          <img src="images/fetchster-torrents.png" alt="Fetchster torrent downloads with peers and seeding status" loading="lazy">
+        </div>
+        <figcaption>
+          <h3>Torrents that seed</h3>
+          <p>Full torrent support with live swarm stats &mdash; add magnet links from any page.</p>
         </figcaption>
       </figure>
     </div>
@@ -173,7 +183,7 @@
         <div class="step reveal">
           <span class="step-num">3</span>
           <h3>Download anything</h3>
-          <p>Files, magnets, torrents, playing videos &mdash; all in one clean list. Enable torrents and media in Settings.</p>
+          <p>Files, magnets, and torrents &mdash; all in one clean list. Enable the torrent engine in Settings.</p>
         </div>
       </div>
     </div>
@@ -185,8 +195,7 @@
       <div class="note-box reveal">
         <h3>Zero bloat by design</h3>
         <p>
-          yt-dlp and ffmpeg download from their official sources only when you enable
-          <strong>Media downloads</strong>; the torrent engine downloads when you enable
+          The torrent engine downloads from its official source only when you enable
           <strong>Torrent downloads</strong>. The app itself stays small.
         </p>
         <a class="btn btn-primary" href="https://github.com/phpflock/fetchster/releases" target="_blank" rel="noopener">Get Fetchster</a>

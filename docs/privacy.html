@@ -28,11 +28,10 @@
   app and extension access, and how it is handled.</p>
 
   <h2>What the extension accesses</h2>
-  <p>When you download a file, start a torrent, or play a video on a page, the
-  extension reads the download URL and the request context needed to reproduce
-  the download correctly: HTTP request headers, cookies, and User-Agent for
-  that download. It may also read the URLs of media streams a page is playing,
-  so the app can offer them as downloadable formats.</p>
+  <p>When you download a file or start a torrent, the extension reads the
+  download URL and sends it to the Fetchster app with your browser's
+  User-Agent (and the referring page, for links added from the right-click
+  menu).</p>
 
   <h2>Where that data goes</h2>
   <p>All of it is sent only to the Fetchster app running on <strong>your own
@@ -45,15 +44,13 @@
   <p>The app stores your download list locally on your Mac
   (~/Library/Application Support/Fetchster). Files download to the folder you
   choose. When you enable optional features, the app downloads engine binaries
-  (yt-dlp, ffmpeg, aria2) from their official sources. For YouTube and similar
-  sites, yt-dlp requests format information using your existing browser
-  session. Torrent downloads connect to peers and trackers you explicitly
-  initiate.</p>
+  (ffmpeg, aria2) from their official sources. Torrent downloads connect to
+  peers and trackers you explicitly initiate.</p>
 
   <h2>Third-party services</h2>
-  <p>Fetchster uses open-source tools (yt-dlp, FFmpeg, aria2) whose own
-  privacy policies apply to their operation. The app itself has no account
-  system and sends no data to us.</p>
+  <p>Fetchster uses open-source tools (FFmpeg, aria2) whose own privacy
+  policies apply to their operation. The app itself has no account system and
+  sends no data to us.</p>
 
   <h2>Contact</h2>
   <p>Questions? Open an issue at

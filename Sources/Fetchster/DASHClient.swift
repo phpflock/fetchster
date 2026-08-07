@@ -273,7 +273,7 @@ private final class MPDParser: NSObject, XMLParserDelegate {
     }
 
     private func expandTemplate(_ template: String, number: Int, id: String) -> String {
-        var result = template.replacingOccurrences(of: "$RepresentationID$", with: id)
+        let result = template.replacingOccurrences(of: "$RepresentationID$", with: id)
         let ns = result as NSString
         guard let regex = try? NSRegularExpression(pattern: #"\$Number(%0(\d+)d)?\$"#),
               let match = regex.firstMatch(in: result, range: NSRange(location: 0, length: ns.length)) else {

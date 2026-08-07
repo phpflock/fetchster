@@ -109,6 +109,30 @@ Developer mode → Load unpacked). Then:
 - Toggle capture on/off from the extension popup, which also shows whether the
   app's server is reachable.
 
+Two extension variants ship in this repo:
+
+- [Extensions/chrome](Extensions/chrome) — full-featured version for personal
+  use (Developer mode / enterprise), including video grab.
+- [Extensions/chrome-store](Extensions/chrome-store) — the Chrome Web Store
+  version: files, magnets, and torrents only, with no video features and no
+  YouTube references. It talks to the app over Chrome native messaging instead
+  of the loopback HTTP server, so it needs no host permissions. Register the
+  native messaging host once per browser:
+
+  ```bash
+  ./Scripts/install_native_host.sh <extension-id>
+  ```
+
+  (The extension ID is shown on the extension card at `chrome://extensions`
+  after loading the folder.)
+
+### Safari extension
+
+The Safari integration lives in [Extensions/safari](Extensions/safari) (web
+extension code) and [Safari](Safari) (native bridge for Xcode). Safari
+extensions must be bundled inside a macOS app and code-signed; see
+[Safari/README.md](Safari/README.md) for the Xcode setup and signing steps.
+
 ### Why not "hijack Apple's download system" entirely?
 
 macOS has no public API to intercept another app's file writes or downloads —

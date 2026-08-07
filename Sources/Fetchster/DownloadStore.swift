@@ -21,7 +21,7 @@ final class DownloadStore: ObservableObject {
     let engines = EngineManager.shared
     private let dashClient = DASHClient()
     private var cancellables = Set<AnyCancellable>()
-    private var sleepWorkItem: DispatchWorkItem?
+    private var sleepTimer: Timer?
     private var sleepProcess: Process?
     private var pendingYouTubeListings = Set<String>()
 
@@ -607,8 +607,8 @@ final class DownloadStore: ObservableObject {
     // MARK: - Prevent sleep (like caffeinate)
 
     func setSleepTimer(minutes: Int?) {
-        sleepWorkItem?.cancel()
-        sleepWorkItem = nil
+        sleepTimer?.invalidate()
+        sleepTimer = nil
         stopCaffeinate()
         guard let minutes, minutes > 0 else {
             sleepTimerEnd = nil
@@ -619,17 +619,34 @@ final class DownloadStore: ObservableObject {
         startCaffeinate(seconds: minutes * 60)
         let end = Date().addingTimeInterval(TimeInterval(minutes * 60))
         sleepTimerEnd = end
-        let work = DispatchWorkItem { [weak self] in
-            self?.sleepTimerFired()
+        // Poll every second and fire when the end time is reached. A single
+        // one-shot work item is unreliable here: App Nap / timer throttling
+        // can delay it past the deadline, leaving the countdown stuck at 0.
+        let timer = Timer(timeInterval: 1.0, repeats: true) { [weak self] _ in
+            self?.checkSleepTimer()
         }
-        sleepWorkItem = work
-        DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(minutes * 60), execute: work)
+        // `.common` keeps the timer firing while a menu or the popover is
+        // tracking, not just in the default run loop mode.
+        RunLoop.main.add(timer, forMode: .common)
+        sleepTimer = timer
+    }
+
+    private func checkSleepTimer() {
+        guard let end = sleepTimerEnd else {
+            sleepTimer?.invalidate()
+            sleepTimer = nil
+            return
+        }
+        if Date() >= end {
+            sleepTimerFired()
+        }
     }
 
     private func sleepTimerFired() {
         guard sleepTimerEnd != nil else { return }
         sleepTimerEnd = nil
-        sleepWorkItem = nil
+        sleepTimer?.invalidate()
+        sleepTimer = nil
         stopCaffeinate()
         notify(title: "Prevent sleep ended", body: "Your Mac can sleep again.")
     }
